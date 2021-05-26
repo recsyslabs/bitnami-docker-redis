@@ -20,7 +20,7 @@ RUN ln -s /opt/bitnami/scripts/redis/run.sh /run.sh
 COPY rootfs /
 RUN /opt/bitnami/scripts/redis/postunpack.sh
 ENV BITNAMI_APP_NAME="redis" \
-    BITNAMI_IMAGE_VERSION="6.2.3-debian-10-r19-rejson" \
+    BITNAMI_IMAGE_VERSION="6.2.3-debian-10-r20-rejson" \
     PATH="/opt/bitnami/common/bin:/opt/bitnami/redis/bin:$PATH"
 
 COPY --from=rejson /usr/lib/redis/modules/rejson.so /usr/local/lib/rejson.so
