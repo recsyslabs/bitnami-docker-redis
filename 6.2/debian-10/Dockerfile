@@ -22,6 +22,9 @@ ENV BITNAMI_APP_NAME="redis" \
     BITNAMI_IMAGE_VERSION="6.2.3-debian-10-r19" \
     PATH="/opt/bitnami/common/bin:/opt/bitnami/redis/bin:$PATH"
 
+FROM redislabs/rejson:latest as rejson
+COPY --from=rejson /usr/lib/redis/modules/rejson.so /usr/local/lib/rejson.so
+
 EXPOSE 6379
 
 USER 1001
